@@ -10,7 +10,7 @@ namespace Kalkulator
     {
         static void Main(string[] args)
         {
-            double a, b, c;
+            double a, b;
             string dzialanie = "";
             Console.Write("podaj a: ");
             a = double.Parse(Console.ReadLine());

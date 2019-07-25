@@ -86,14 +86,15 @@ namespace Kalkulator
         {
             string path1 = "C:\\Users\\mjankiewicz\\Desktop\\TEST1.txt";
             string path = "C:\\Users\\mjankiewicz\\Desktop\\TEST.txt";
-            File.AppendAllText(path1, "Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b + '\n' + "wynik = " + wynik + '\n' + "==============" + '\n');
+            string zapis = "Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b + '\n' + "wynik = " + wynik + '\n' + "==============" + '\n';
+            File.AppendAllText(path1, zapis);
             FileStream fileStream = new FileStream(path,FileMode.OpenOrCreate, FileAccess.ReadWrite);
             
             using (StreamWriter writer = new StreamWriter(fileStream))
             {
                 
 
-                writer.Write("Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b + '\n' + "wynik = " + wynik);
+                writer.Write(zapis);
 
                 Console.WriteLine("Zapisano!");
             }
