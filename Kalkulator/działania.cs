@@ -19,10 +19,8 @@ namespace Kalkulator
             this.a = a;
             this.b = b;
             this.rodz_dzialanie = rodz_dzialanie;
-            
-
-
         }
+      
 
         public double Dodowanie(double a , double b)
         {
@@ -32,24 +30,16 @@ namespace Kalkulator
         }
         public double Odejmowanie(double a, double b)
         {
-            double wynik;
-            if (a >b)
-            {
+            
+            
+            
                 wynik = a - b;
-            }
-            else if (b>a)
-            {
-                wynik =  b - a;
-            }
-            else
-            {
-                wynik = a - a;
-            }
+            
             return wynik;
         }
         public double Mnożenie(double a, double b)
         {
-            double wynik;
+            
             wynik = a * b;
             return wynik;
         }
@@ -94,13 +84,17 @@ namespace Kalkulator
         }
         public void Zapis()
         {
+            string path1 = "C:\\Users\\mjankiewicz\\Desktop\\TEST1.txt";
             string path = "C:\\Users\\mjankiewicz\\Desktop\\TEST.txt";
+            File.AppendAllText(path1, "Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b + '\n' + "wynik = " + wynik + '\n' + "==============" + '\n');
             FileStream fileStream = new FileStream(path,FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            
             using (StreamWriter writer = new StreamWriter(fileStream))
             {
-               
-                    writer.Write("Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b + '\n' +  "wynik = " + wynik );
                 
+
+                writer.Write("Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b + '\n' + "wynik = " + wynik);
+
                 Console.WriteLine("Zapisano!");
             }
             fileStream.Close();
