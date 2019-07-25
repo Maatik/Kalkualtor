@@ -12,19 +12,21 @@ namespace Kalkulator
         double a = 0;
         double b = 0;
         string rodz_dzialanie = "";
+        double wynik;
 
         public Kalkulator(double a, double b, string rodz_dzialanie)
         {
             this.a = a;
             this.b = b;
             this.rodz_dzialanie = rodz_dzialanie;
+            
 
 
         }
 
         public double Dodowanie(double a , double b)
         {
-            double wynik;
+            
             wynik = a + b;
             return wynik;
         }
@@ -53,7 +55,7 @@ namespace Kalkulator
         }
         public double Dzielenie(double x, double y)
         {
-            double wynik;
+            
 
            
                 wynik = x / y;
@@ -63,13 +65,13 @@ namespace Kalkulator
         }
         public double Dodowanie(double a, double b, double c)
         {
-            double wynik;
+            
             wynik = a + b + c;
             return wynik;
         }
         public double Odejmowanie(double a, double b, double c)
         {
-            double wynik;
+            
             if (a > b)
             {
                 wynik = a - b - c;
@@ -86,7 +88,7 @@ namespace Kalkulator
         }
         public double Mnożenie(double a, double b, double c)
         {
-            double wynik;
+            
             wynik = a * b*c;
             return wynik;
         }
@@ -97,7 +99,7 @@ namespace Kalkulator
             using (StreamWriter writer = new StreamWriter(fileStream))
             {
                
-                    writer.Write("Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b );
+                    writer.Write("Rodzaj dzialania: " + rodz_dzialanie + '\n' + "a = " + a + '\n' + "b = " + b + '\n' +  "wynik = " + wynik );
                 
                 Console.WriteLine("Zapisano!");
             }
